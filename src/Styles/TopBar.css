@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
+
+.topbar {
+  width: 100%;
+  background: linear-gradient(90deg, #0ea5e9, #3b82f6);
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.scrolling-text {
+  display: inline-block;
+  padding-left: 30%;
+  animation: scroll-left 30s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Optional: pause scroll on hover */
+.scrolling-text:hover {
+  animation-play-state: paused;
+}

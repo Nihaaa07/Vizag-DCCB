@@ -1,0 +1,77 @@
+.csawareness-section {
+  position: relative;
+  padding: 80px 20px;
+  background: linear-gradient(90deg, #d598ef, #3b82f6);
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+  text-align: center;
+}
+
+.csawareness-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.csawareness-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.csawareness-title {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* ✅ Main grid for 6 tips (3 per row) */
+.csawareness-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  justify-items: center;
+}
+
+/* Individual cards */
+.csawareness-tip {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 30px 20px;
+  text-align: center;
+  width: 90%;
+  max-width: 340px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.csawareness-tip:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.tip-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #ffd700;
+}
+
+.tip-text {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ✅ Responsive */
+@media (max-width: 900px) {
+  .csawareness-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .csawareness-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Inter:wght@400;500&display=swap');
+
+.addresses-section {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+.addresses-overlay {
+  background: rgba(0, 0, 0, 0.45);
+  background-image: linear-gradient(90deg, #d598ef66, #3b82f666);
+  padding: 60px 20px;
+}
+
+.addresses-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+  backdrop-filter: blur(6px);
+  border-radius: 16px;
+  padding: 40px 30px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.addresses-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.addresses-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #d598ef, #3b82f6);
+}
+
+/* Collapsible District Blocks */
+.district-block {
+  margin-bottom: 25px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.district-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #d598ef99, #3b82f699);
+  padding: 14px 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.district-header h3 {
+  font-size: 1.3rem;
+  margin: 0;
+  color: #fff;
+  text-align: left;
+}
+
+.district-header span {
+  font-size: 1.5rem;
+  color: #fff;
+  user-select: none;
+  transition: transform 0.3s;
+}
+
+.district-content {
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  margin-top: 5px;
+}
+
+/* Table Styling */
+.addresses-table-container {
+  overflow-x: auto;
+  border-radius: 10px;
+}
+
+.addresses-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #fff;
+  min-width: 900px;
+}
+
+.addresses-table th,
+.addresses-table td {
+  padding: 12px 16px;
+  text-align: left;
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+}
+
+.addresses-table thead {
+  background: linear-gradient(90deg, #d598ef, #3b82f6);
+}
+
+.addresses-table th {
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.addresses-table tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.addresses-table tr:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transition: 0.3s ease;
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+/* Medium screens (tablets) */
+@media (max-width: 992px) {
+  .addresses-content {
+    padding: 30px 20px;
+    margin: 0 15px;
+  }
+
+  .addresses-title {
+    font-size: 2.2rem;
+  }
+
+  .district-header h3 {
+    font-size: 1.15rem;
+  }
+
+  .addresses-table {
+    min-width: 100%;
+  }
+
+  .addresses-table th,
+  .addresses-table td {
+    font-size: 0.9rem;
+    padding: 10px 12px;
+  }
+}
+
+/* Small screens (mobile) */
+@media (max-width: 600px) {
+  .addresses-section {
+    padding: 70px 0;
+    background-attachment: scroll;
+  }
+
+  .addresses-overlay {
+    padding: 40px 15px;
+  }
+
+  .addresses-content {
+    padding: 25px 18px;
+  }
+
+  .addresses-title {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+
+  .district-header {
+    flex-direction: row;
+    padding: 12px 15px;
+  }
+
+  .district-header h3 {
+    font-size: 1rem;
+  }
+
+  .district-header span {
+    font-size: 1.3rem;
+  }
+
+  /* Make table scrollable and readable */
+  .addresses-table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .addresses-table {
+    min-width: 600px;
+  }
+
+  .addresses-table th,
+  .addresses-table td {
+    font-size: 0.85rem;
+    padding: 8px 10px;
+  }
+}
+
+/* Extra small (very small phones) */
+@media (max-width: 400px) {
+  .addresses-title {
+    font-size: 1.6rem;
+  }
+
+  .district-header h3 {
+    font-size: 0.95rem;
+  }
+
+  .addresses-content {
+    padding: 20px 14px;
+  }
+
+  .addresses-table {
+    min-width: 500px;
+  }
+}

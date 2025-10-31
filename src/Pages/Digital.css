@@ -1,0 +1,342 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+.digital-page {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(90deg, #d598ef, #3b82f6);
+  min-height: 50vh;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+
+.digital-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
+  letter-spacing: 2px;
+  margin-top: -12px;
+  margin-bottom: 50px;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4); 
+  position: relative;
+}
+
+.digital-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 35px;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.digital-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 22px;
+  padding: 25px;
+  width: 320px;
+  backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.digital-card:hover {
+  transform: translateY(-6px);
+  border-color: #fff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.digital-card.active {
+  width: 90%;
+  max-width: 850px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #333;
+  cursor: default;
+  transition: all 0.4s ease;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.card-icon {
+  font-size: 1.8rem;
+  color: #3b82f6;
+}
+
+.digital-card.active .card-icon {
+  color: #3b82f6;
+}
+
+.card-subtitle {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.card-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.6s ease;
+}
+
+.card-content.show {
+  max-height: 1000px;
+  opacity: 1;
+  margin-top: 20px;
+}
+
+.card-content ul {
+  list-style-type: disc;
+  margin-left: 25px;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.download-btn {
+  margin-top: 20px;
+  background: linear-gradient(90deg, #d598ef, #3b82f6);
+  border: none;
+  padding: 10px 22px;
+  border-radius: 25px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.download-btn:hover {
+  transform: scale(1.05);
+}
+
+.greenpin-img {
+  width: 100%;
+  max-width: 520px;
+  margin: 20px auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);
+}
+
+.note {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: #333;
+  background: rgba(59, 130, 246, 0.05);
+  padding: 10px 15px;
+  border-radius: 8px;
+}
+
+.digital-card.active h3 {
+  color: #3b82f6;
+}
+
+.digital-card.active h4 {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  color: #3b82f6;
+}
+
+/* 🌐 RESPONSIVE DESIGN */
+
+/* 🖥️ Large tablets / small laptops */
+@media (max-width: 1024px) {
+  .digital-page {
+    padding: 50px 30px;
+  }
+
+  .digital-title {
+    font-size: 2.4rem;
+    margin-bottom: 45px;
+  }
+
+  .digital-cards {
+    gap: 30px;
+  }
+
+  .digital-card {
+    width: 290px;
+    padding: 22px;
+  }
+
+  .digital-card.active {
+    max-width: 700px;
+  }
+
+  .card-content ul {
+    font-size: 0.95rem;
+  }
+
+  .download-btn {
+    font-size: 0.95rem;
+    padding: 9px 20px;
+  }
+}
+
+/* 📱 Tablets (768px and below) */
+@media (max-width: 768px) {
+  .digital-page {
+    padding: 45px 20px;
+  }
+
+  .digital-title {
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+  }
+
+  .digital-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .digital-card {
+    width: 90%;
+    max-width: 500px;
+    padding: 22px;
+  }
+
+  .digital-card.active {
+    width: 95%;
+    max-width: 600px;
+  }
+
+  .card-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .card-icon {
+    font-size: 1.6rem;
+  }
+
+  .card-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .card-content ul {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .greenpin-img {
+    max-width: 420px;
+  }
+
+  .note {
+    font-size: 0.9rem;
+  }
+
+  .download-btn {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 10px 0;
+  }
+}
+
+/* 📲 Mobile phones (576px and below) */
+@media (max-width: 576px) {
+  .digital-page {
+    padding: 40px 15px;
+  }
+
+  .digital-title {
+    font-size: 1.7rem;
+    margin-bottom: 35px;
+  }
+
+  .digital-card {
+    width: 100%;
+    padding: 18px;
+  }
+
+  .digital-card.active {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .card-header {
+    gap: 8px;
+  }
+
+  .card-icon {
+    font-size: 1.4rem;
+  }
+
+  .card-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .card-content ul {
+    margin-left: 20px;
+    font-size: 0.85rem;
+  }
+
+  .greenpin-img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+
+  .note {
+    font-size: 0.85rem;
+    padding: 8px 10px;
+  }
+
+  .download-btn {
+    font-size: 0.85rem;
+    padding: 9px 0;
+  }
+}
+
+/* 📱 Small phones (400px and below) */
+@media (max-width: 400px) {
+  .digital-page {
+    padding: 35px 10px;
+  }
+
+  .digital-title {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+
+  .digital-card {
+    padding: 15px;
+    border-radius: 18px;
+    max-width: 70%;
+  }
+
+  .digital-card.active {
+    padding: 18px;
+  }
+
+  .card-icon {
+    font-size: 1.3rem;
+  }
+
+  .card-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .card-content ul {
+    font-size: 0.8rem;
+  }
+
+  .download-btn {
+    font-size: 0.8rem;
+    padding: 8px 0;
+  }
+}

@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+.ochart-section {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  padding: 80px 20px;
+  color: #000;
+  text-align: center;
+  background: #f9fafb;
+}
+
+/* Animated Gradient Glow Background */
+.ochart-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(90deg, #d598ef, #3b82f6, #d598ef);
+  background-size: 400% 400%;
+  animation: moveGradient 10s ease infinite;
+  z-index: -1;
+  filter: blur(120px) opacity(0.6);
+}
+
+@keyframes moveGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Title — with your gradient theme */
+.ochart-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #d598ef, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 2px;
+  margin-top: -12px;
+  margin-bottom: 50px;
+  text-align: center;
+  text-shadow: 0 3px 10px rgba(59, 130, 246, 0.2);
+  position: relative;
+}
+
+.ochart-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #d598ef, #3b82f6);
+  box-shadow: 0 0 12px rgba(213, 152, 239, 0.7);
+}
+
+/* Glassmorphic Chart Container */
+.chart-container {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+  border-radius: 20px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Boxes */
+.chart-box {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 10px;
+  background: #fff;
+  color: #111827;
+  font-weight: 600;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  border: 2px solid transparent;
+  background-image: linear-gradient(white, white),
+                    linear-gradient(90deg, #d598ef, #3b82f6);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chart-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(59, 130, 246, 0.25);
+}
+
+/* Layout Rows */
+.chart-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  gap: 40px;
+}
+
+/* Level spacing */
+.ceo {
+  margin-bottom: 40px;
+}
+
+.gm {
+  margin-bottom: 30px;
+}
+
+/* Decorative connecting lines */
+.chart-container::before,
+.chart-container::after {
+  content: "";
+  position: absolute;
+  background: linear-gradient(90deg, #d598ef, #3b82f6);
+  height: 3px;
+  width: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+  opacity: 0.5;
+}
+
+/* Fade animation for subtle entry */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.chart-container {
+  animation: fadeInUp 1s ease both;
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+@media (max-width: 992px) {
+  .ochart-title {
+    font-size: 2.4rem;
+  }
+
+  .chart-row {
+    gap: 25px;
+  }
+
+  .chart-box {
+    font-size: 0.95rem;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ochart-section {
+    padding: 60px 15px;
+  }
+
+  .chart-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .chart-box {
+    width: 90%;
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ochart-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .chart-box {
+    font-size: 0.9rem;
+    padding: 10px 18px;
+  }
+}

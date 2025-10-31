@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+:root {
+  --primary-gradient: linear-gradient(90deg, #d598ef, #3b82f6);
+  --card-bg: rgba(255, 255, 255, 0.15);
+  --text-light: #f8fafc;
+}
+
+.fin-section {
+  position: relative;
+  min-height: 100vh;
+  padding: 80px 20px;
+  font-family: "Poppins", sans-serif;
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.fin-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-gradient);
+  background-size: 200% 200%;
+  animation: gradientMove 30s ease infinite;
+  z-index: -1;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
+.fin-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 50px;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.fin-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 50px 30px;
+  max-width: 500px;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.fin-card:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.fin-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.fin-desc {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #f1f5f9;
+  margin-bottom: 30px;
+}
+
+.fin-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 30px;
+  background: #fff;
+  color: #3b82f6;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.fin-btn:hover {
+  background: var(--primary-gradient);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .fin-title {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+  }
+  .fin-card {
+    padding: 40px 25px;
+    max-width: 450px;
+  }
+  .fin-desc {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .fin-section {
+    padding: 60px 15px;
+  }
+
+  .fin-title {
+    font-size: 1.9rem;
+    margin-bottom: 35px;
+  }
+
+  .fin-card {
+    padding: 35px 20px;
+    max-width: 400px;
+  }
+
+  .fin-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+
+  .fin-desc {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 25px;
+  }
+
+  .fin-btn {
+    padding: 10px 25px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Small Mobile Screens */
+@media (max-width: 480px) {
+  .fin-section {
+    padding: 50px 10px;
+  }
+
+  .fin-title {
+    font-size: 1.7rem;
+    margin-bottom: 30px;
+  }
+
+  .fin-card {
+    padding: 30px 18px;
+    border-radius: 15px;
+  }
+
+  .fin-icon {
+    font-size: 2.2rem;
+  }
+
+  .fin-desc {
+    font-size: 0.85rem;
+  }
+
+  .fin-btn {
+    padding: 9px 22px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra Small Screens (below 360px) */
+@media (max-width: 360px) {
+  .fin-title {
+    font-size: 1.5rem;
+  }
+
+  .fin-desc {
+    font-size: 0.8rem;
+  }
+
+  .fin-card {
+    padding: 25px 15px;
+  }
+}

@@ -1,0 +1,272 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+:root {
+  --primary: #3b82f6;
+  --secondary: #9333ea;
+  --gradient: linear-gradient(90deg, #d598ef, #3b82f6);
+  --bg: #f9f9fc;
+  --dot-size: 16px;
+  --line-width: 3px;
+  --card-radius: 14px;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--bg);
+  margin: 0;
+}
+
+.timeline-container {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 20px;
+}
+
+.timeline-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 600;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 50px;
+}
+
+.timeline {
+  position: relative;
+  margin-left: 30px;
+  border-left: var(--line-width) solid var(--primary);
+  padding-left: 30px;
+  counter-reset: notif-counter; /* start numbering */
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 35px;
+  animation: fadeUp 0.6s ease both;
+  counter-increment: notif-counter; /* increment numbering */
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -39px;
+  top: 10px;
+  width: var(--dot-size);
+  height: var(--dot-size);
+  background: var(--gradient);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(147, 51, 234, 0.5);
+}
+
+/* ✅ Serial number styling – moved outside the text */
+.timeline-item::before {
+  content: counter(notif-counter);
+  position: absolute;
+  left: -75px;
+  top: 4px;
+  width: 30px;
+  height: 30px;
+  background: rgba(147, 51, 234, 0.1);
+  color: var(--secondary);
+  border: 2px solid var(--secondary);
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 6px rgba(147, 51, 234, 0.2);
+}
+
+.timeline-content {
+  background: white;
+  padding: 18px 22px;
+  border-radius: var(--card-radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.2);
+}
+
+.timeline-content h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.timeline-content p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.timeline-btn {
+  background: var(--gradient);
+  border: none;
+  color: #fff;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.timeline-btn:hover {
+  background: linear-gradient(90deg, #b46add, #2563eb);
+  transform: scale(1.05);
+}
+
+.timeline-btn.secondary {
+  background: linear-gradient(90deg, #10b981, #22c55e);
+}
+
+.timeline-btn.secondary:hover {
+  background: linear-gradient(90deg, #0ea36e, #16a34a);
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .timeline {
+    margin-left: 20px;
+    padding-left: 25px;
+  }
+
+  .timeline-content {
+    padding: 16px;
+  }
+
+  .timeline-dot {
+    left: -32px;
+  }
+
+  .timeline-title {
+    font-size: 1.8rem;
+  }
+
+  .timeline-btn {
+    font-size: 0.9rem;
+  }
+
+  .timeline-item::before {
+    left: -58px;
+    width: 26px;
+    height: 26px;
+    font-size: 0.8rem;
+  }
+}
+
+/* 🌟 DEAF Accounts Section */
+.deaf-section {
+  margin-top: 70px;
+  padding: 30px 25px;
+  background: linear-gradient(90deg, #f3e8ff, #e0f2fe);
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  animation: fadeUp 0.8s ease both;
+}
+
+.deaf-section h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 14px;
+}
+
+.deaf-link {
+  font-size: 1.1rem;
+  color: #2563eb;
+  font-weight: 500;
+  text-decoration: none;
+  background: white;
+  padding: 10px 22px;
+  border-radius: 8px;
+  display: inline-block;
+  transition: all 0.3s ease;
+  border: 2px solid #2563eb;
+  word-wrap: break-word;
+  max-width: 90%;
+}
+
+.deaf-link:hover {
+  background: var(--gradient);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* 📱 Responsive Adjustments */
+@media (max-width: 480px) {
+  .deaf-section {
+    margin-top: 40px;
+    padding: 20px 15px;
+    border-radius: 12px;
+  }
+
+  .deaf-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .deaf-link {
+    font-size: 0.95rem;
+    padding: 8px 16px;
+    width: 100%;
+  }
+
+  .timeline {
+    border-left: 2px solid var(--primary);
+  }
+
+  .timeline-dot {
+    width: 12px;
+    height: 12px;
+    left: -28px;
+  }
+
+  .timeline-title {
+    font-size: 1.5rem;
+  }
+
+  .timeline-content h3 {
+    font-size: 1rem;
+  }
+
+  .timeline-content p {
+    font-size: 0.9rem;
+  }
+
+  .timeline-item::before {
+    left: -48px;
+    width: 22px;
+    height: 22px;
+    font-size: 0.75rem;
+  }
+}

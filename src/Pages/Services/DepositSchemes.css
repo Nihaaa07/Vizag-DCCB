@@ -1,0 +1,137 @@
+.deposit-section {
+  padding: 100px 20px;
+  background: var(--section-bg);
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+}
+
+.deposit-title {
+  text-align: center;
+  font-size: 2.5rem;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  margin-top: -20px;
+  margin-bottom: 15px;
+}
+
+.deposit-intro {
+  text-align: center;
+  color: var(--text-color);
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+}
+
+.deposit-table-container {
+  overflow-x: auto;
+}
+
+.deposit-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 6px 25px rgba(59, 130, 246, 0.1);
+}
+
+.deposit-table th {
+  background: var(--primary-gradient);
+  color: white;
+  padding: 14px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.deposit-table td {
+  padding: 14px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  color: var(--text-color);
+}
+
+.deposit-table tr:hover {
+  background: #f3eaff;
+  transition: 0.3s;
+}
+
+/* 🌐 Tablet View (≤1024px) */
+@media (max-width: 1024px) {
+  .deposit-section {
+    padding: 80px 30px;
+  }
+
+  .deposit-title {
+    font-size: 2.2rem;
+  }
+
+  .deposit-intro {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .deposit-table-container {
+    overflow-x: auto;
+  }
+
+  .deposit-table th,
+  .deposit-table td {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+}
+
+/* 📱 Mobile View (≤768px) */
+@media (max-width: 768px) {
+  .deposit-section {
+    padding: 60px 15px;
+  }
+
+  .deposit-title {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  .deposit-intro {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding: 0 10px;
+  }
+
+  .deposit-table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .deposit-table {
+    width: 700px; /* keeps structure visible, scrollable horizontally */
+    font-size: 0.9rem;
+  }
+
+  .deposit-table th,
+  .deposit-table td {
+    padding: 10px;
+  }
+}
+
+/* 📱 Small Mobile (≤480px) */
+@media (max-width: 480px) {
+  .deposit-title {
+    font-size: 1.6rem;
+  }
+
+  .deposit-intro {
+    font-size: 0.9rem;
+  }
+
+  .deposit-table {
+    width: 650px;
+    font-size: 0.85rem;
+  }
+
+  .deposit-table th,
+  .deposit-table td {
+    padding: 8px;
+  }
+}
+

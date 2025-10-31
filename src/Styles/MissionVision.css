@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+.missionvision-section {
+  padding: 80px 20px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  background: #f9fafc;
+  color: #222;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Title Styling */
+.missionvision-title h2 {
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+  background: linear-gradient(90deg, #d598ef, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Container Layout */
+.missionvision-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 80px;
+}
+
+/* Circular Card Base */
+.circle-card {
+  position: relative;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  overflow: hidden;
+}
+
+.circle-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 40px rgba(59, 130, 246, 0.3);
+}
+
+/* Gradient Circular Border Animation */
+.circle-border {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #d598ef, #3b82f6);
+  z-index: 0;
+  filter: blur(3px);
+  animation: rotate 6s linear infinite;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Inner Content */
+.circle-content {
+  position: relative;
+  z-index: 2;
+  background: #fff;
+  border-radius: 50%;
+  width: 90%;
+  height: 100%;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.circle-content h3 {
+  font-size: 1.6rem;
+  background: linear-gradient(90deg, #d598ef, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.circle-content p {
+  font-size: 0.95rem;
+  color: #333;
+  padding: 10px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* Background Motion Gradient (Soft floating light) */
+.missionvision-section::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(213,152,239,0.3), transparent);
+  top: 10%;
+  left: 5%;
+  border-radius: 50%;
+  animation: float 8s ease-in-out infinite alternate;
+}
+
+.missionvision-section::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(59,130,246,0.3), transparent);
+  bottom: 10%;
+  right: 5%;
+  border-radius: 50%;
+  animation: float 10s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) scale(1); }
+  100% { transform: translateY(20px) scale(1.1); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .circle-card {
+    width: 280px;
+    height: 280px;
+  }
+
+  .circle-content {
+    padding: 30px 10px;
+  }
+
+  .circle-content h3 {
+    font-size: 1.7rem;
+    margin-bottom: -12px;
+    
+  }
+
+  .circle-content p {
+    font-size: 0.7rem;
+    line-height: 140%;
+    padding-left: 9%;
+  }
+}

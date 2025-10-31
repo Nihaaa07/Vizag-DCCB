@@ -1,0 +1,147 @@
+.hero-section {
+  width: 100%;
+  max-height: 80vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-slide {
+  position: relative;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== Overlay with logo and text ===== */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35); /* dark overlay for readability */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-logo {
+  width: 150px;
+  opacity: 0.75;
+  margin-bottom: 20px;
+}
+
+.hero-text {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* ===== Slick Overrides ===== */
+.slick-slider,
+.slick-list,
+.slick-track {
+  width: 100%;
+}
+
+.slick-slide div {
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Dots */
+.slick-dots {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slick-dots li button:before {
+  font-size: 6px;
+  color: #fff;
+  opacity: 0.6;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #fff;
+  opacity: 1;
+}
+
+/* Arrows */
+.slick-prev, .slick-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 35px;
+  height: 35px;
+  z-index: 10;
+}
+
+.slick-prev {
+  left: 10px;
+}
+
+.slick-next {
+  right: 10px;
+}
+
+.slick-prev::before, .slick-next::before {
+  font-size: 30px;
+  color: #fff;
+  opacity: 0.8;
+}
+
+/* ===== Responsive ===== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .hero-section {
+    max-height: 60vh;
+  }
+  .hero-text {
+    font-size: 2.2rem;
+  }
+  .hero-logo {
+    width: 120px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero-section {
+    max-height: 50vh;
+  }
+
+  .hero-text {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-top: -70px;
+  }
+
+  .hero-logo {
+    width: 90px;
+    margin-bottom: 60px;
+  }
+
+  .slick-prev::before,
+  .slick-next::before {
+    font-size: 24px;
+  }
+}

@@ -1,0 +1,202 @@
+.board-section {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  padding: 80px 20px;
+  color: #000;
+  text-align: center;
+  background: #f9fafb;
+}
+
+/* Animated gradient background */
+.board-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(90deg, #d598ef, #3b82f6, #d598ef);
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease infinite;
+  z-index: -1;
+  filter: blur(100px) opacity(0.6);
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Gradient title */
+.board-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #d598ef, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 2px;
+  margin-top: -12px;
+  margin-bottom: 50px;
+  text-align: center;
+  text-shadow: 0 3px 10px rgba(59, 130, 246, 0.2);
+  position: relative;
+}
+
+.board-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #d598ef, #3b82f6);
+}
+
+/* Grid layout */
+.board-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+/* Card design */
+.board-card {
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 20px;
+  width: 260px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.board-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 50px rgba(59, 130, 246, 0.3);
+}
+
+/* Image inside card — full view, no crop */
+.board-card img {
+  width: 100%;
+  height: auto;
+  max-height: 280px;
+  border-radius: 15px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Card Title with gradient theme */
+.board-card h2 {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #3b82f6, #d598ef);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.5px;
+}
+
+.board-card p {
+  font-size: 0.95rem;
+  color: #333;
+  margin-top: 6px;
+  line-height: 1.6;
+}
+
+/* ===================== RESPONSIVE DESIGN ===================== */
+
+/* Large screens (≥1200px) */
+@media (min-width: 1200px) {
+  .board-grid {
+    gap: 50px;
+  }
+  .board-card {
+    width: 280px;
+  }
+}
+
+/* Tablets (768px - 1199px) */
+@media (max-width: 1199px) {
+  .board-section {
+    padding: 60px 30px;
+  }
+
+  .board-title {
+    font-size: 2.4rem;
+    margin-bottom: 40px;
+  }
+
+  .board-card {
+    width: 240px;
+  }
+
+  .board-card img {
+    max-height: 250px;
+  }
+}
+
+/* Mobiles (480px - 767px) */
+@media (max-width: 767px) {
+  .board-section {
+    padding: 50px 20px;
+  }
+
+  .board-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .board-grid {
+    gap: 25px;
+  }
+
+  .board-card {
+    width: 90%;
+    max-width: 330px;
+    padding: 18px;
+  }
+
+  .board-card img {
+    max-height: 230px;
+  }
+
+  .board-card h2 {
+    font-size: 1.1rem;
+  }
+
+  .board-card p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Small phones (max-width: 400px) */
+@media (max-width: 400px) {
+  .board-title {
+    font-size: 1.6rem;
+  }
+
+  .board-card {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .board-card img {
+    max-height: 200px;
+  }
+
+  .board-card h2 {
+    font-size: 1rem;
+  }
+
+  .board-card p {
+    font-size: 0.85rem;
+  }
+}

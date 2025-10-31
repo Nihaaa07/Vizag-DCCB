@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+:root {
+  --primary-gradient: linear-gradient(90deg, #d598ef, #3b82f6);
+  --hover-gradient: linear-gradient(90deg, #b46add, #2563eb);
+}
+
+.privacy-section {
+  min-height: 100vh;
+  background: #f8fafc;
+  font-family: "Poppins", sans-serif;
+  color: #111827;
+  padding: 80px 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header Bar */
+.privacy-header {
+  width: 100%;
+  background: var(--primary-gradient);
+  text-align: center;
+  border-radius: 12px;
+  padding: 25px 0;
+  margin-bottom: 40px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.privacy-header h1 {
+  color: #fff;
+  font-size: 2.4rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+/* Content Card */
+.privacy-content {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 40px 50px;
+  border-radius: 18px;
+  max-width: 950px;
+  line-height: 1.8;
+  font-size: 15.5px;
+  color: #1e293b;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.privacy-content strong {
+  color: #2563eb;
+}
+
+.privacy-content p {
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .privacy-header h1 {
+    font-size: 2rem;
+  }
+  .privacy-content {
+    padding: 25px 20px;
+  }
+}
