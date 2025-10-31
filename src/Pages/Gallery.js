@@ -15,7 +15,7 @@ const Gallery = () => {
         <h2 className="section-title">Bank Products</h2>
         <div className="gallery-grid">
           <div className="gallery-item">
-            <img src={Product1} alt="Bank Product 1" />
+            <img src={Product1} alt="" />
             <div className="overlay">
               <span>Product 1</span>
             </div>

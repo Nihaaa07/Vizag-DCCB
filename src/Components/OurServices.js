@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../Styles/OurServices.css";
-import { FaPiggyBank, FaMoneyCheckAlt, FaUniversity, FaExchangeAlt, FaHome, FaEllipsisH } from "react-icons/fa";
+import { FaPiggyBank, FaMoneyCheckAlt, FaUniversity, FaExchangeAlt, FaEllipsisH } from "react-icons/fa";
 import { RiShieldCheckFill } from "react-icons/ri";
 
 const OurServices = () => {
