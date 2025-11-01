@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
 
+/* 🔹 Base Topbar Style */
 .topbar {
   width: 100%;
   background: linear-gradient(90deg, #0ea5e9, #3b82f6);
@@ -12,12 +13,16 @@
   display: flex;
   align-items: center;
   position: relative;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 999;
 }
 
+/* 🔹 Scrolling Text */
 .scrolling-text {
   display: inline-block;
   padding-left: 30%;
   animation: scroll-left 30s linear infinite;
+  font-size: 1rem;
 }
 
 @keyframes scroll-left {
@@ -29,7 +34,52 @@
   }
 }
 
-/* Optional: pause scroll on hover */
+/* 🔹 Optional: pause scroll on hover */
 .scrolling-text:hover {
   animation-play-state: paused;
+}
+
+/* 🔹 Responsive Styles */
+@media (max-width: 992px) {
+  .topbar {
+    height: 32px;
+  }
+  .scrolling-text {
+    font-size: 0.95rem;
+    padding-left: 20%;
+    animation-duration: 25s; /* slightly faster on tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    height: 30px;
+  }
+  .scrolling-text {
+    font-size: 0.9rem;
+    padding-left: 15%;
+    animation-duration: 22s;
+  }
+}
+
+@media (max-width: 576px) {
+  .topbar {
+    height: 28px;
+  }
+  .scrolling-text {
+    font-size: 0.85rem;
+    padding-left: 10%;
+    animation-duration: 18s; /* faster scroll on small screens */
+  }
+}
+
+@media (max-width: 400px) {
+  .topbar {
+    height: 26px;
+  }
+  .scrolling-text {
+    font-size: 0.8rem;
+    padding-left: 5%;
+    animation-duration: 15s;
+  }
 }

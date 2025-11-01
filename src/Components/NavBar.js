@@ -41,6 +41,14 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="nav-container">
+        {/* 🍔 Hamburger icon (right side) */}
+        <div className={`hamburger ${mobileOpen ? "open" : ""}`} onClick={toggleMobile}>
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+        </div>
+
+        {/* 🌐 Navigation Links (slide-in from right) */}
         <div className={`nav-links ${mobileOpen ? "open" : ""}`}>
           <Link to="/" className="nav-item" onClick={handleLinkClick}>
             HOME
@@ -48,61 +56,47 @@ const Navbar = () => {
 
           {/* 🔹 ABOUT US DROPDOWN */}
           <div className={`dropdown ${activeDropdown === "about" ? "active" : ""}`}>
-            <Link
-              to="/about-us"
-              className="nav-item"
-              onClick={() => {
-                handleLinkClick();
-                toggleDropdown("about");
-              }}
-            >
+            <span className="nav-item" onClick={() => toggleDropdown("about")}>
               ABOUT US ▾
-            </Link>
+            </span>
             <div className="dropdown-menu">
-              <Link to="/about/mission-vision" onClick={toggleMobile}>
+              <Link to="/about/mission-vision" onClick={handleLinkClick}>
                 DCCB Mission and Vision
               </Link>
-              <Link to="/about/board-of-management" onClick={toggleMobile}>
+              <Link to="/about/board-of-management" onClick={handleLinkClick}>
                 Board of Management
               </Link>
-              <Link to="/about/org-chart" onClick={toggleMobile}>
+              <Link to="/about/org-chart" onClick={handleLinkClick}>
                 Organization Chart
               </Link>
-              <Link to="/about/emails" onClick={toggleMobile}>
+              <Link to="/about/emails" onClick={handleLinkClick}>
                 Email IDs of DCCB Branches
               </Link>
-              <Link to="/about/addresses" onClick={toggleMobile}>
+              <Link to="/about/addresses" onClick={handleLinkClick}>
                 Addresses of Branches
               </Link>
-              <Link to="/about/financial-statements" onClick={toggleMobile}>
+              <Link to="/about/financial-statements" onClick={handleLinkClick}>
                 Audited Financial Statements
               </Link>
             </div>
           </div>
 
-          {/* 💼 SERVICES DROPDOWN (UPDATED) */}
+          {/* 💼 SERVICES DROPDOWN */}
           <div className={`dropdown ${activeDropdown === "services" ? "active" : ""}`}>
-            <Link
-              to="/services"
-              className="nav-item"
-              onClick={() => {
-                handleLinkClick();
-                toggleDropdown("services");
-              }}
-            >
+            <span className="nav-item" onClick={() => toggleDropdown("services")}>
               SERVICES ▾
-            </Link>
+            </span>
             <div className="dropdown-menu">
-              <Link to="/services/deposit-schemes" onClick={toggleMobile}>
+              <Link to="/services/deposit-schemes" onClick={handleLinkClick}>
                 Deposit Schemes
               </Link>
-              <Link to="/services/loan-schemes" onClick={toggleMobile}>
+              <Link to="/services/loan-schemes" onClick={handleLinkClick}>
                 Loan Schemes
               </Link>
-              <Link to="/services/online-payments" onClick={toggleMobile}>
+              <Link to="/services/online-payments" onClick={handleLinkClick}>
                 Online Payments
               </Link>
-              <Link to="/services/other-services" onClick={toggleMobile}>
+              <Link to="/services/other-services" onClick={handleLinkClick}>
                 Other Services
               </Link>
             </div>
@@ -114,28 +108,28 @@ const Navbar = () => {
               NETWORK ▾
             </span>
             <div className="dropdown-menu">
-              <Link to="/network/dccb-branches" onClick={toggleMobile}>
+              <Link to="/network/dccb-branches" onClick={handleLinkClick}>
                 DCCB Branches
               </Link>
-              <Link to="/network/pacs" onClick={toggleMobile}>
+              <Link to="/network/pacs" onClick={handleLinkClick}>
                 PACS
               </Link>
             </div>
           </div>
 
-          <Link to="/notifications" className="nav-item" onClick={toggleMobile}>
+          <Link to="/notifications" className="nav-item" onClick={handleLinkClick}>
             NOTIFICATIONS
           </Link>
 
-          <Link to="/tenders" className="nav-item" onClick={toggleMobile}>
+          <Link to="/tenders" className="nav-item" onClick={handleLinkClick}>
             TENDERS
           </Link>
 
-          <Link to="/digital" className="nav-item" onClick={toggleMobile}>
+          <Link to="/digital" className="nav-item" onClick={handleLinkClick}>
             DIGITAL
           </Link>
 
-          <Link to="/gallery" className="nav-item" onClick={toggleMobile}>
+          <Link to="/gallery" className="nav-item" onClick={handleLinkClick}>
             GALLERY
           </Link>
 
@@ -160,7 +154,7 @@ const Navbar = () => {
               <a href="https://apcob.bank.in/" target="_blank" rel="noreferrer">
                 APCOB
               </a>
-              <Link to="/resource-links/careers" onClick={toggleMobile}>
+              <Link to="/resource-links/careers" onClick={handleLinkClick}>
                 Careers
               </Link>
             </div>
@@ -169,13 +163,6 @@ const Navbar = () => {
           <Link to="/contact-us" className="nav-item" onClick={handleLinkClick}>
             CONTACT US
           </Link>
-        </div>
-
-        {/* 🍔 HAMBURGER ICON */}
-        <div className="hamburger" onClick={toggleMobile}>
-          <span className={mobileOpen ? "bar open" : "bar"}></span>
-          <span className={mobileOpen ? "bar open" : "bar"}></span>
-          <span className={mobileOpen ? "bar open" : "bar"}></span>
         </div>
       </div>
     </nav>

@@ -18,27 +18,15 @@
   top: 0;
   z-index: 999;
   font-family: "Poppins", sans-serif;
-
-  /* FIX for rotation issue */
-  transform: none !important;
-  rotate: 0deg !important;
-  skew: 0deg !important;
-  scale: 1 !important;
 }
 
 .nav-container {
   width: 90%;
   margin: auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-between; /* Changed: hamburger to right */
   align-items: center;
   padding: 7px 0;
-
-  /* Ensure no inherited transform */
-  transform: none !important;
-  rotate: 0deg !important;
-  skew: 0deg !important;
-  scale: 1 !important;
 }
 
 .nav-links {
@@ -46,12 +34,6 @@
   align-items: center;
   gap: 20px;
   flex-wrap: nowrap;
-
-  /* FIX: prevent weird rotations or scaling */
-  transform: none !important;
-  rotate: 0deg !important;
-  skew: 0deg !important;
-  scale: 1 !important;
 }
 
 .nav-links a {
@@ -143,33 +125,37 @@
   transition: 0.3s ease;
 }
 
-.open:nth-child(1) {
+.hamburger.open .bar:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
-.open:nth-child(2) {
+.hamburger.open .bar:nth-child(2) {
   opacity: 0;
 }
-.open:nth-child(3) {
+.hamburger.open .bar:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
 }
 
 /* Responsive */
 @media (max-width: 992px) {
   .nav-links {
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
+    position: fixed;
+    top: 0;
+    right: -100%; /* hidden by default */
+    width: 70%;
+    height: 100vh;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
     background: var(--primary-gradient);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    gap: 0;
-    display: none;
+    padding-top: 80px;
+    gap: 15px;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    transition: right 0.4s ease;
+    overflow-y: auto; /* ✅ allows scrolling inside */
   }
 
   .nav-links.open {
-    display: flex;
-    animation: fadeIn 0.3s ease;
+    right: 0; /* slides in from right */
   }
 
   .dropdown-menu {
@@ -192,11 +178,4 @@
   .hamburger {
     display: flex;
   }
-}
-
-/* Extra Safety — Prevent Navbar from inheriting rotated header */
-header, .dccb-header {
-  transform: none !important;
-  rotate: 0deg !important;
-  skew: 0deg !important;
 }
