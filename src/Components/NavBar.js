@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "../Styles/NavBar.css";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const toggleMobile = () => {
     setMobileOpen(!mobileOpen);
@@ -21,6 +22,22 @@ const Navbar = () => {
   const handleLinkClick = () => {
     setMobileOpen(false);
     setActiveDropdown(null);
+  };
+
+  const handleMainNavClick = (path, dropdownKey = null) => {
+    if (window.innerWidth <= 992) {
+      // Toggle dropdown in mobile view
+      if (dropdownKey) {
+        toggleDropdown(dropdownKey);
+      } else {
+        navigate(path);
+        handleLinkClick();
+      }
+    } else {
+      // On desktop, direct navigation
+      navigate(path);
+      handleLinkClick();
+    }
   };
 
   const handleResourceLinkClick = (e) => {
@@ -48,7 +65,7 @@ const Navbar = () => {
           <span className="bar"></span>
         </div>
 
-        {/* 🌐 Navigation Links (slide-in from right) */}
+        {/* 🌐 Navigation Links */}
         <div className={`nav-links ${mobileOpen ? "open" : ""}`}>
           <Link to="/" className="nav-item" onClick={handleLinkClick}>
             HOME
@@ -56,7 +73,10 @@ const Navbar = () => {
 
           {/* 🔹 ABOUT US DROPDOWN */}
           <div className={`dropdown ${activeDropdown === "about" ? "active" : ""}`}>
-            <span className="nav-item" onClick={() => toggleDropdown("about")}>
+            <span
+              className="nav-item"
+              onClick={() => handleMainNavClick("/about-us", "about")}
+            >
               ABOUT US ▾
             </span>
             <div className="dropdown-menu">
@@ -83,7 +103,10 @@ const Navbar = () => {
 
           {/* 💼 SERVICES DROPDOWN */}
           <div className={`dropdown ${activeDropdown === "services" ? "active" : ""}`}>
-            <span className="nav-item" onClick={() => toggleDropdown("services")}>
+            <span
+              className="nav-item"
+              onClick={() => handleMainNavClick("/services", "services")}
+            >
               SERVICES ▾
             </span>
             <div className="dropdown-menu">
